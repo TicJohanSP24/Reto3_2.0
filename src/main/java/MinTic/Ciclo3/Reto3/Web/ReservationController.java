@@ -5,8 +5,8 @@
  */
 package MinTic.Ciclo3.Reto3.Web;
 
-import MinTic.Ciclo3.Reto3.Model.Partyroom;
-import MinTic.Ciclo3.Reto3.Service.PartyroomService;
+import MinTic.Ciclo3.Reto3.Model.Reservation;
+import MinTic.Ciclo3.Reto3.Service.ReservationService;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,26 +26,26 @@ import org.springframework.web.bind.annotation.RestController;
  * @author gadoj
  */
 @RestController
-@RequestMapping("/api/Partyroom")
+@RequestMapping("/api/Reservation")
 @CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.POST,RequestMethod.PUT,RequestMethod.DELETE})
-public class PartyroomController {
+public class ReservationController {
     
     @Autowired
-    private PartyroomService partyroomService;
+    private ReservationService reservationService;
     
     @GetMapping("/all")
-    public List<Partyroom> getPartyrooms(){
-        return partyroomService.getAll();            
+    public List<Reservation> getReservations(){
+        return reservationService.getAll();            
     }
     
     @GetMapping("/{id}")
-    public Optional<Partyroom> getPartyroom(@PathVariable("id")int id){
-        return partyroomService.getPartyroom(id);
+    public Optional<Reservation> getReservation(@PathVariable("id")int id){
+        return reservationService.getReservation(id);
     }
                 
     @PostMapping("/save")
     @ResponseStatus(HttpStatus.CREATED)
-    public Partyroom save(@RequestBody Partyroom p){
-        return partyroomService.save(p);
+    public Reservation save(@RequestBody Reservation r){
+        return reservationService.save(r);
     }                    
 }
