@@ -20,12 +20,12 @@ import java.util.Map;
 
 @RestController
 public class UserController {
-
-     @GetMapping("/")
-    public String helloWorld() {
-        return "no es necesario estar conectado";
-    }
-
+    
+//    @GetMapping("/user")
+//    public Map<String, Object> user (@AuthenticationPrincipal OAuth2User principal){
+//        return Collections.singletonMap("name", principal.getAttribute("name"));
+//    }
+    
     @GetMapping("/sin-restriccion")
     public String notRestricted() {
        return "no es necesario estar conectado";
