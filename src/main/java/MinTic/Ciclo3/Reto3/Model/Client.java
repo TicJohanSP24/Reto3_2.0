@@ -41,13 +41,12 @@ public class Client implements Serializable {
     @JsonIgnoreProperties("client")
     private List<Reservation> reservations;
 
-    
-    public String getName() {
-        return name;
+    public Integer getIdClient() {
+        return idClient;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setIdClient(Integer idClient) {
+        this.idClient = idClient;
     }
 
     public String getEmail() {
@@ -58,20 +57,28 @@ public class Client implements Serializable {
         this.email = email;
     }
 
-    public Integer getAge() {
-        return age;
-    }
-
-    public void setAge(Integer age) {
-        this.age = age;
-    }
-
     public String getPassword() {
         return password;
     }
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Integer getAge() {
+        return age;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
     }
 
     public List<Message> getMessages() {
@@ -82,14 +89,6 @@ public class Client implements Serializable {
         this.messages = messages;
     }
 
-    public Integer getIdClient() {
-        return idClient;
-    }
-
-    public void setIdClient(Integer idClient) {
-        this.idClient = idClient;
-    } 
-
     public List<Reservation> getReservations() {
         return reservations;
     }
@@ -97,6 +96,8 @@ public class Client implements Serializable {
     public void setReservations(List<Reservation> reservations) {
         this.reservations = reservations;
     }
+
+   
 
 
 }

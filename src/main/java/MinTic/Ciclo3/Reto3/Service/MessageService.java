@@ -43,4 +43,25 @@ public class MessageService {
         }
     }    
     
+    public Message update(Message m){
+        if (m.getIdMessage()!=null){
+            Optional<Message>maux=messageRepository.getMessage(m.getIdMessage());
+            if(!maux.isEmpty()){
+                if(m.getMessageText()!=null){
+                    maux.get().setMessageText(m.getMessageText());
+                }
+            }    
+        }
+        return m;
+    }
+    
+    public boolean deleteMessage(int id){
+        Optional<Message> m=getMessage(id);
+        if(!m.isEmpty()){
+            messageRepository.delete(m.get());
+            return true;
+        }
+        return false;
+    } 
+    
 }

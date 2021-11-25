@@ -41,7 +41,7 @@ public class Partyroom implements Serializable {
     private Category category;
 
     @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "partyroom")
-    @JsonIgnoreProperties("partyroom")
+    @JsonIgnoreProperties({"partyroom", "client"})
     private List <Message> messages;
 
     @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "partyroom")

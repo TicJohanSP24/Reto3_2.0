@@ -41,6 +41,29 @@ public class AdminService {
             return a;
             }
         }
-    }    
+    }
+    public Admin update(Admin a){
+        if (a.getId()!=null){
+            Optional<Admin>aaux=adminRepository.getAdmin(a.getId());
+            if(!aaux.isEmpty()){
+                if(a.getNombre()!=null){
+                    aaux.get().setNombre(a.getNombre());
+                }
+                if(a.getContraseña()!=null){
+                    aaux.get().setContraseña(a.getContraseña());
+                }                
+            }    
+        }
+        return a;
+    }
     
-}
+    public boolean deleteAdmin(int id){
+        Optional<Admin> p=getAdmin(id);
+        if(!p.isEmpty()){
+            adminRepository.delete(p.get());
+            return true;
+        }
+        return false;
+    } 
+    
+}        
