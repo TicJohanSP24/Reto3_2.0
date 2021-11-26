@@ -6,6 +6,8 @@
 package MinTic.Ciclo3.Reto3.Web;
 
 import MinTic.Ciclo3.Reto3.Model.Reservation;
+import MinTic.Ciclo3.Reto3.Reportes.ContadorClientes;
+import MinTic.Ciclo3.Reto3.Reportes.StatusReservas;
 import MinTic.Ciclo3.Reto3.Service.ReservationService;
 import java.util.List;
 import java.util.Optional;
@@ -62,4 +64,19 @@ public class ReservationController {
     public boolean deleteReservation(@PathVariable("id")int id){
         return reservationService.deleteReservation(id);
     }
+    
+    @GetMapping("/report-status")
+    public StatusReservas getReservas(){
+        return reservationService.reporteStatusServicio();
+    }
+    
+    @GetMapping("/report-dates/{dateOne}/{dateTwo}")
+     public List<Reservation> getReservasTiempo (@PathVariable("dateOne")String dateOne, @PathVariable("dateTwo")String dateTwo ){
+         return reservationService.reporteTiempoServicio(dateOne, dateTwo);
+     }
+     
+    @GetMapping("/report-clients")
+     public List<ContadorClientes> getClientes(){
+         return reservationService.reporteClientesServicio();
+     }
 }
