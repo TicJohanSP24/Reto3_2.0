@@ -3,8 +3,8 @@
 function autoInicioCliente(){
     console.log("se esta ejecutando")
     $.ajax({
-        //url:"http://168.138.127.214:8080/api/Client/all",
-        url: "http://localhost:8080/api/Client/all",
+        url:"http://168.138.127.214:8080/api/Client/all",
+        //url: "http://localhost:8080/api/Client/all",
 
         type:"GET",
         datatype:"JSON",
@@ -61,8 +61,8 @@ function guardarInformacionCliente(){
             dataType: 'JSON',
             data: JSON.stringify(var2),
             
-            //url:"http://168.138.127.214:8080/api/Client/save",
-            url: "http://localhost:8080/api/Client/save",
+            url:"http://168.138.127.214:8080/api/Client/save",
+            //url: "http://localhost:8080/api/Client/save",
 
         
             
@@ -97,8 +97,8 @@ function actualizarInformacionCliente(idElemento){
     console.log(myData);
     let dataToSend=JSON.stringify(myData);
     $.ajax({
-        //url:"http://168.138.127.214:8080/api/Client/update",
-        url: "http://localhost:8080/api/Client/update",
+        url:"http://168.138.127.214:8080/api/Client/update",
+        //url: "http://localhost:8080/api/Client/update",
 
         type:"PUT",
         data:dataToSend,
@@ -125,8 +125,8 @@ function borrarCliente(idElemento){
     let dataToSend=JSON.stringify(myData);
     console.log(dataToSend);
     $.ajax({
-        //url:"http://168.138.247.22:80/api/Client/"+idElemento,
-        url: "http://localhost:8080/api/Client/"+idElemento,
+        url:"http://168.138.127.214:8080/api/Client/"+idElemento,
+        //url: "http://localhost:8080/api/Client/"+idElemento,
 
         type:"DELETE",
         data:dataToSend,

@@ -1,8 +1,8 @@
 function autoInicioCategoria(){
     console.log("se esta ejecutando")
     $.ajax({
-        //url:"http://168.138.127.214:8080/api/Category/all",
-       url: "http://localhost:8080/api/Category/all",
+        url:"http://168.138.127.214:8080/api/Category/all",
+       //url: "http://localhost:8080/api/Category/all",
 
         type:"GET",
         datatype:"JSON",
@@ -20,8 +20,8 @@ function autoInicioCategoria(){
 //Manejador GET
 function traerInformacionSalon() {
     $.ajax({
-        //url:"http://168.138.127.214:8080/api/Partyroom/all",
-        url: "http://localhost:8080/api/Partyroom/all",
+        url:"http://168.138.127.214:8080/api/Partyroom/all",
+        //url: "http://localhost:8080/api/Partyroom/all",
         type: "GET",
         datatype: "JSON",
         success: function (response) {
@@ -65,8 +65,8 @@ function pintarRespuestaSalon(response){
 function cargarDatosSalon(id) {
     $.ajax({
         dataType: 'json',
-        //url:"http://168.138.127.214:8080/api/Partyroom/"+id,
-        url: "http://localhost:8080/api/Partyroom/" + id,
+        url:"http://168.138.127.214:8080/api/Partyroom/"+id,
+        //url: "http://localhost:8080/api/Partyroom/" + id,
         type: 'GET',
 
         success: function (response) {
@@ -108,8 +108,8 @@ function agregarSalon() {
             dataType: 'JSON',
             data: JSON.stringify(elemento),
 
-            //url:"http://168.138.127.214:8080/api/Partyroom/save",
-            url: "http://localhost:8080/api/Partyroom/save",
+            url:"http://168.138.127.214:8080/api/Partyroom/save",
+            //url: "http://localhost:8080/api/Partyroom/save",
 
 
                 success: function (response) {
@@ -147,8 +147,8 @@ console.log(dataToSend);
         {
             dataType: 'json',
             data: dataToSend,
-            //url:"http://168.138.127.214:8080/api/Partyroom/"+idElemento,
-            url: "http://localhost:8080/api/Partyroom/" + idElemento,
+            url:"http://168.138.127.214:8080/api/Partyroom/"+idElemento,
+            //url: "http://localhost:8080/api/Partyroom/" + idElemento,
             type: 'DELETE',
             contentType: "application/JSON",
             success: function (response) {
@@ -187,8 +187,8 @@ function actualizar(idElemento) {
             datatype: 'json',
             data: dataToSend,
             contentType: "application/JSON",
-            //url:"http://168.138.127.214:8080/api/Partyroom/update",
-            url: "http://localhost:8080/api/Partyroom/update",
+            url:"http://168.138.127.214:8080/api/Partyroom/update",
+            //url: "http://localhost:8080/api/Partyroom/update",
             type: "PUT",
 
             success: function (response) {
