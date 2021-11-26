@@ -20,15 +20,28 @@ public class SecurityAdapter extends WebSecurityConfigurerAdapter {
     
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.antMatcher("/").authorizeRequests()
-                .antMatchers(new String[]{"/**", "/sin-restriccion", "/saludo"}).permitAll()
-                .anyRequest().authenticated()
-                .and()
-                .oauth2Login();
+        http.authorizeRequests(a -> a
+                .antMatchers("/**","/error","/webjars/**").permitAll()
+                .anyRequest().authenticated()              
+            ).exceptionHandling(e -> e
+                    .authenticationEntryPoint(new HttpStatusEntryPoint(HttpStatus.UNAUTHORIZED))                    
+            ).oauth2Login();
+        
         http.cors().and().csrf().disable();
-
+        
     }
+    
+    
 }
 
 
-
+//    @Override
+//    protected void configure(HttpSecurity http) throws Exception {
+//        http.antMatcher("/privado").authorizeRequests()
+//                .antMatchers(new String[]{"/**", "/sin-restriccion", "/saludo", "/webjars/**"}).permitAll()
+//                .anyRequest().authenticated()
+//                .and()
+//                .oauth2Login();
+//        http.cors().and().csrf().disable();
+//
+//    }

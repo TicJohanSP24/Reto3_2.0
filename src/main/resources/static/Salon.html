@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<title>Reto 5</title>
+<meta charset="utf-8">
+<meta name="description" content="Este es un documento HTML5">
+<meta name="keywords" content="HTML, CSS, JavaScript">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<link rel="stylesheet" href="misestilos.css">
+<script type="text/javascript" src="js/misFuncionesSalon.js"></script>
+</head>
+
+<body>
+    <header id="cabeceralogo">
+    <div>
+    <h1>Salones</h1>
+    </div>
+    </header>
+    <nav id="menuprincipal">
+    <div>
+    <ul>
+    <li><a href="index.html">Principal</a></li>
+    <li><a href="Reportes.html">Reportes</a></li>
+    <li><a href="Categoria.html">Categorias</a></li>
+    <li><a href="Cliente.html">Clientes</a></li>
+    <li><a href="Mensajes.html">Mensajes</a></li>
+    <li><a href="Reservaciones.html">Reservaciones</a></li>
+    <li><a href="Salon.html">Salones</a></li>
+    </ul>
+    </div>
+    </nav>
+
+    <label>Nombre:</label>
+    <input class="controlSalon" type="text" id="name2" placeholder="escribe el nombre" ><br>
+    <label>Dueño:</label>
+    <input class="controlSalon" type="text" id="owner" placeholder="inscribe al responsable" ><br>
+    <label>Capacidad:</label>
+    <input class="controlSalon" type="number" id="capacity" placeholder="escribe la capacidad"><br>
+    <label>Descripcion:</label>
+    <input class="controlSalon" type="text" id="description2" placeholder="descripcion del salon" ><br>
+    <select id="select-category"></select>
+    <div>
+    
+    <script type="text/javascript">
+         window.onload = autoInicioCategoria(); 
+    </script>
+    
+    </div>
+
+<div id="miListaSalon"></div>
+<button onclick="traerInformacionSalon()" > Consultar Salones</button>
+
+<button onclick="agregarSalon()">Guardar Salon</button>
+
+<style>
+    table,
+    th,
+    td {
+        border: 5px solid rgb(0, 42, 70);
+        border-collapse: collapse;
+    }
+</style>
+
+</body>
+</html>

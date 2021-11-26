@@ -11,16 +11,39 @@
     <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
     <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 </head>
-<body>
+
+<body onload="itemsCliente();">
 <h1>PartyRooms 2021</h1>    
 <div class="container unauthenticated">
     Inicia sesión con GitHub:
     <a href="/oauth2/authorization/github">Autentícate acá</a>
 </div>
 <div class="container authenticated" style="display:none">
-    Autenticado como: <span id="user"></span>  
+    Bienvenido <span id="user"></span>  
 </div>
+
+<div style = "color:blue">
+    <h1>RETO 3</h1></div>
+<p>Elige qué tabla quieres modificar:</p>
+
+<table>
+ <th><form method="get" action="Categoria.html">
+ <button type="boton">Categoria</form></th>
+ <th><form method="get" action="Salon.html">
+ <button type="boton">Salon</form></th>
+ <th><form method="get" action="Cliente.html">
+ <button type="boton">Cliente</form></th>
+ <th><form method="get" action="Mensajes.html">
+ <button type="boton">Mensajes</form></th>
+ <th><form method="get" action="Reservaciones.html">
+ <button type="boton">Reservaciones</form></th>
+ <th><form method="get" action="Reportes.html">
+ <button type="boton">Reporte</form></th>
+
+</form></th>
+</table>
 </body>
+
 <script type="text/javascript">
     $.get("/user", function (data){
         $("#user").html(data.name);
