@@ -52,10 +52,10 @@ function guardarInformacionCategorias(){
 
         
         success:function(response) {
-                console.log(response);
-            console.log("Se guardo correctamente");
-            alert("Se guardo correctamente");
-            traerInformacionCategorias(response);
+            console.log(response);
+//            console.log("Se guardo correctamente");
+//            alert("Se guardo correctamente");
+//            traerInformacionCategorias(response);
     
         },
         
