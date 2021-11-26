@@ -30,7 +30,7 @@ function traerReporteDate(){
     console.log(fechaCierre);
     
         $.ajax({
-            url:"http://168.138.127.214:8080/api/Reservation/report-dates/"+fechaInicio+"/"+fechaCierre,
+            url:"http://168.138.127.214:8080/api/Reservation/report-dates"+fechaInicio+"/"+fechaCierre,
             type:"GET",
             datatype:"JSON",
             success:function(respuesta){
